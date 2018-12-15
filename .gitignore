@@ -1,0 +1,10 @@
+output/
+.vscode/
+.DS_Store
+*.pdf
+*.aux
+*.log
+*.xdv
+*.toc
+*.fls
+*.fls_latexmk
