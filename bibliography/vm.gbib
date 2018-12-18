@@ -1,0 +1,50 @@
+[
+    {
+        "author": "Rami Al-Rfou",
+        "id": "theano",
+        "lang": "english",
+        "asis": "Rami Al-Rfou et al. Theano: A Python framework for fast computation of mathematical expressions"
+    },
+    {
+        "author": "He Ma, Fei Mao, Graham W. Taylor",
+        "id": "theanompi",
+        "lang": "english",
+        "asis": "He Ma, Fei Mao, Graham W. Taylor. Theano-MPI: a Theano-based Distributed Training Framework"
+    },
+    {
+        "author": "Yangqing Jia",
+        "id": "caffe",
+        "lang": "english",
+        "asis": "Yangqing Jia et al. Caffe: Convolutional Architecture for Fast Feature Embedding"
+    },
+    {
+        "author": "Jeffrey Dean",
+        "id": "lsd",
+        "lang": "english",
+        "asis": "Jeffrey Dean et al. Large Scale Distributed Deep Networks"
+    },
+    {
+        "author": "Martín Abati",
+        "id": "tf",
+        "lang": "english",
+        "asis": "Martín Abati et al. TensorFlow: Large-Scale Machine Learning on Heterogeneous Systems"
+    },
+    {
+        "author": "Seiya Tokui",
+        "id": "chainer",
+        "lang": "english",
+        "asis": "Seiya Tokui et al. Chainer: a Next-Generation Open Source Framework for Deep Learning"
+    },
+    {
+        "author": "Linpeng Tang, Yida Wang, Theodore L. Willke, Kai Li",
+        "id": "sched1",
+        "lang": "english",
+        "asis": "Linpeng Tang, Yida Wang, Theodore L. Willke, Kai Li. Scheduling Computation Graphs of Deep Learning Models on Manycore CPUs"
+    },
+    {
+        "author": "Nadav Rotem",
+        "id": "glow",
+        "lang": "english",
+        "asis": "Nadav Rotem et al. Glow: Graph Lowering Compiler Techniques for Neural Networks"
+    }
+]
