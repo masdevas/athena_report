@@ -7,8 +7,8 @@ import json
 import codecs
 
 
-def extract_main_name(authors):
-    authors = item["author"].split(',')
+def extract_main_name(item):
+    authors = item.split(',')
     main_author = authors[0].strip().split(' ')
     return main_author[-1]
 
@@ -19,9 +19,9 @@ def comp(obj1, obj2):
     elif obj1["lang"] != "russian" and obj2["lang"] == "russian":
         return 1
     else:
-        if "authors" in obj1 and "authors" in obj2:
-            name1 = extract_main_name(obj1["authors"])
-            name2 = extract_main_name(obj2["authors"])
+        if "author" in obj1 and "author" in obj2:
+            name1 = extract_main_name(obj1["author"])
+            name2 = extract_main_name(obj2["author"])
             if name1 > name2:
                 return 1
             elif name1 < name2:
