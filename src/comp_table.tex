@@ -1,0 +1,17 @@
+\begin{table}[]
+\centering
+\caption{My caption}
+\label{my-label}
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{lllllll}
+\hline
+\textbf{Фреймворк} & \textbf{Лицензия}       & \textbf{Ускорители}                    & \textbf{Модель распределенных вычислений}  & \textbf{Сложность добавления новых операций} & \textbf{Сложность добавления поддержки новой архитектуры} & \textbf{Поддерживаемые ОС}          \\ \hline
+Tensorflow         & Apache 2.0              & CUDA, Google TPU, Qualcomm Hexagon DSP & Сервер параметров                          & Средняя                                      & Высокая                                                   & Windows, Linux, macOS, Android, iOS \\
+Caffe              & BSD                     & CUDA                                   & Нет                                        & Высокая                                      & Высокая                                                   & Windows, Linux, macOS               \\
+Theano             & Proprietary open source & CUDA                                   & Нет (только с помощью сторонних библиотек) & Низкая                                       & Средняя                                                   & Windows, Linux, macOS               \\
+PyTorch            & Proprietary open source & CUDA                                   & Нет(только с помощью сторонних библиотек)  & Средняя                                      & Высокая                                                   & Windows, Linux                      \\
+CNTK               & MIT                     & CUDA                                   & Сервер параметров                          & Высокая                                      & Высокая                                                   & Windows, Linux                      \\
+Glow               & Apache 2.0              & OpenCL                                 & Нет                                        & Средняя                                      & Низкая                                                    & Windows, Linux, macOS               \\ \hline
+\end{tabular}%
+}
+\end{table}

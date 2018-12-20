@@ -6,8 +6,15 @@
 \usepackage{xltxtra}
 \usepackage{indentfirst} % Красная строка после заголовка
 \usepackage{enumerate}
-% \usepackage{amsmath}
 \usepackage[perpage]{footmisc}
+\usepackage{booktabs}
+\usepackage{rotating}
+\usepackage{tabularx}
+
+\newcommand{\HY}{\hyphenpenalty=25\exhyphenpenalty=25}
+\newcolumntype{Z}{>{\HY\centering\arraybackslash\hspace{0pt}}X}
+\newcolumntype{M}{>{\HY\RaggedRight\arraybackslash\hspace{0pt}}c}
+\newcolumntype{L}{>{\HY\RaggedRight\arraybackslash\hspace{0pt}}l}
 
 \defaultfontfeatures{Ligatures=TeX}
 \setmainfont{Times New Roman}
