@@ -5,8 +5,58 @@
         "lang": "russian",
         "title": "Глубокое обучение",
         "year": "2018",
-	"city": "СПб.",
-	"publisher": "Питер",
-	"pages": "480"
+		"city": "СПб.",
+		"publisher": "Питер",
+		"pages": "480"
+    }
+    {
+        "author": "Donald Olding Hebb",
+        "id": "history",
+        "lang": "english",
+        "title": "Organization of Behavior",
+        "year": "1949",
+		"city": "New York",
+		"publisher": "Psychology Press",
+		"pages": "378"
+    }
+    {
+        "author": "Марвин Минский, Сеймур Паперт",
+        "id": "history",
+        "lang": "russian",
+        "title": "Персептроны",
+        "year": "1971",
+		"city": "Москва",
+		"publisher": "Мир",
+		"pages": "262"
+    }
+    {
+        "author": "Warren Sturgis McCulloch, Walter Harry Pitts",
+        "id": "history",
+        "lang": "english",
+        "title": "A logical calculus of the ideas immanent in nervous activity",
+        "year": "1943",
+		"city": "Dordrecht",
+		"publisher": "Kluwer Academic Publishers",
+		"pages": "21"
+    }
+    {
+        "author": "Frank Rosenblatt",
+        "id": "history",
+        "lang": "english",
+        "title": "The Perceptron: a probabilistic model for information storage and organization in the brain",
+        "year": "1958",
+		"city": "Washington",
+		"publisher": "American Psychological Association",
+		"pages": "23"
+    }
+    {
+        "author": "George Cybenko",
+        "id": "history",
+        "lang": "english",
+        "title": "Approximation by Superpositions of a Sigmoidal Function",
+        "year": "1989",
+		"city": "New York",
+		"publisher": "Springer",
+		"pages": "12"
     }
 ]
