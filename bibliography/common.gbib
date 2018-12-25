@@ -11,7 +11,7 @@
     },
     {
         "author": "Donald Olding Hebb",
-        "id": "history",
+        "id": "hebb",
         "lang": "english",
         "title": "Organization of Behavior",
         "year": "1949",
@@ -21,7 +21,7 @@
     },
     {
         "author": "Марвин Минский, Сеймур Паперт",
-        "id": "history",
+        "id": "minsky",
         "lang": "russian",
         "title": "Персептроны",
         "year": "1971",
@@ -41,7 +41,7 @@
     },
     {
         "author": "Frank Rosenblatt",
-        "id": "history",
+        "id": "perceptron",
         "lang": "english",
         "title": "The Perceptron: a probabilistic model for information storage and organization in the brain",
         "year": "1958",
@@ -51,12 +51,54 @@
     },
     {
         "author": "George Cybenko",
-        "id": "history",
+        "id": "cyb",
         "lang": "english",
         "title": "Approximation by Superpositions of a Sigmoidal Function",
         "year": "1989",
         "city": "New York",
         "publisher": "Springer",
         "pages": "12"
+    },
+    {
+        "id": "yao",
+        "author": "Andrew Chi-Chih Yao",
+        "lang": "english",
+        "title": "On Fault-Tolerant Networks for Sorting",
+        "year": "1985"
+    },
+    {
+        "id": "shaldp",
+        "author": "Yoshua Bengio, Olivier Delalleau",
+        "lang": "english",
+        "title": "Shallow vs. Deep Sum-Product Networks",
+        "year": "2011"
+    },
+    {
+        "id": "goritesi",
+        "author": "M Gori, A Tesi",
+        "lang": "english",
+        "title": "On The Problem Of Local Minima In Backpropagation",
+        "year": "1992"
+    },
+    {
+        "id": "lenet",
+        "author": "Yann LeCun, Leon Bottou, Yoshua Bengio, Patrick Haffner",
+        "lang": "english",
+        "title": "Gradient-Based Learning Applied to Document Recognition",
+        "year": "1990"
+    },
+    {
+        "id": "hopfield",
+        "author": "J J Hopfield",
+        "lang": "english",
+        "title": "Neural networks and physical systems with emergent collective computational abilities",
+        "year": "1982"
+    },
+    {
+        "id": "lstm",
+        "author": "Sepp Hochreiter, Jürgen Schmidhuber",
+        "lang": "english",
+        "title": "Long short-term memory",
+        "year": "1997"
     }
 ]
