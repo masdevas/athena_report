@@ -89,6 +89,48 @@ def print_rus_three_less(item):
     return bibitem
 
 
+def print_eng_three_less(item):
+    authors = item["author"].split(',')
+
+    all_authors = []
+    for author in authors:
+        author_parts = author.strip().split(" ")
+        auth_str = ""
+        for part in author_parts[:-1]:
+            auth_str += part[0] + "."
+        auth_str = author_parts[len(author_parts) - 1] + ", " +  auth_str
+        all_authors.append(auth_str)
+
+    bibitem = "\\bibitem{" + item["id"] + "}\n"
+
+    all_authors_str = ", ".join(all_authors)
+
+    bibitem += all_authors_str
+    if "year" in item:
+        bibitem += " (" + item["year"] + ")"
+    bibitem += ". " + item["title"]
+
+    return bibitem
+
+
+def print_eng_more_three(item):
+    authors = item["author"].split(',')
+
+    main_author = authors[0].strip().split(' ')
+    main_author_str = main_author[len(main_author) - 1] + ", "
+    for i in main_author[:-1]:
+        main_author_str += i[0] + '.'
+
+    bibitem = "\\bibitem{" + item["id"] + "}\n"
+    bibitem += main_author_str + " et al"
+
+    if "year" in item:
+        bibitem += " (" + item["year"] + ")"
+    bibitem += ". " + item["title"]
+
+    return bibitem
+
+
 def main():
     f = codecs.open(sys.argv[2], 'w', "utf-8")
     f.write("\\clearpage\n")
@@ -111,6 +153,16 @@ def main():
             if "author" in item:
                 if len(item["author"].split(',')) <= 3:
                     f.write(print_rus_three_less(item))
+            else:
+                raise ValueError("author field is required")
+        else:
+            if "author" in item:
+                if len(item["author"].split(',')) <= 3:
+                    f.write(print_eng_three_less(item))
+                else:
+                    f.write(print_eng_more_three(item))
+            else:
+                raise ValueError("author field is required")
 
     f.write("\\end{thebibliography}\n")
     f.write("\\endgroup\n")
