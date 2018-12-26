@@ -81,6 +81,13 @@
         "year": "1992"
     },
     {
+        "id": "hastad",
+        "author": "Johan Håstad",
+        "lang": "english",
+        "title": "On the correlation of parity and small-depth circuits",
+        "year": "1986"
+    },
+    {
         "id": "lenet",
         "author": "Yann LeCun, Leon Bottou, Yoshua Bengio, Patrick Haffner",
         "lang": "english",
