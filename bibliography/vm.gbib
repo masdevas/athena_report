@@ -1,50 +1,58 @@
 [
     {
-        "author": "Rami Al-Rfou",
+        "author": "Rami Al-Rfou, Guillaume Alain, Amjad Almahairi, Christof Angermueller",
         "id": "theano",
         "lang": "english",
-        "asis": "Rami Al-Rfou et al. Theano: A Python framework for fast computation of mathematical expressions"
+        "title": "Theano: A Python framework for fast computation of mathematical expressions",
+        "year": "2016"
     },
     {
-        "author": "He Ma, Fei Mao, Graham W. Taylor",
+        "author": "He Ma, Fei Mao, Graham W Taylor",
         "id": "theanompi",
         "lang": "english",
-        "asis": "He Ma, Fei Mao, Graham W. Taylor. Theano-MPI: a Theano-based Distributed Training Framework"
+        "year": "2016",
+        "title": "Theano-MPI: a Theano-based Distributed Training Framework"
     },
     {
-        "author": "Yangqing Jia",
+        "author": "Yangqing Jia, Evan Shelhamer, Jeff Donahue, Sergey Karayev, Jonathan Long, Ross Girshick, Sergio Guadarrama, Trevor Darrell",
         "id": "caffe",
         "lang": "english",
-        "asis": "Yangqing Jia et al. Caffe: Convolutional Architecture for Fast Feature Embedding"
+        "year": "2014",
+        "title": "Caffe: Convolutional Architecture for Fast Feature Embedding"
     },
     {
-        "author": "Jeffrey Dean",
+        "author": "Jeffrey Dean, Greg S Corrado, Rajat Monga, Kai Chen, Matthieu Devin, Quoc V. Le, Mark Z. Mao, Marc’Aurelio Ranzato, Andrew Senior, Paul Tucker, Ke Yang, Andrew Y. Ng",
         "id": "lsd",
         "lang": "english",
-        "asis": "Jeffrey Dean et al. Large Scale Distributed Deep Networks"
+        "year": "2012",
+        "title": "Large Scale Distributed Deep Networks"
     },
     {
-        "author": "Martín Abati",
+        "author": "Martín Abadi, Ashish Agarwal, Paul Barham, Eugene Brevdo, Zhifeng Chen, Craig Citro, Greg S. Corrado, Andy Davis, Jeffrey Dean, Matthieu Devin, Sanjay Ghemawat, Ian Goodfellow, Andrew Harp, Geoffrey Irving, Michael Isard, Yangqing Jia, Rafal Jozefowicz, Lukasz Kaiser, Manjunath Kudlur, Josh Levenberg, Dan Mane, Rajat Monga, Sherry Moore, Derek Murray, Chris Olah, Mike Schuster, Jonathon Shlens, Benoit Steiner, Ilya Sutskever, Kunal Talwar, Paul Tucker, Vincent Vanhoucke, Vijay Vasudevan, Fernanda Viegas, Oriol Vinyals, Pete Warden, Martin Wattenberg, Martin Wicke, Yuan Yu, Xiaoqiang Zheng",
         "id": "tf",
         "lang": "english",
-        "asis": "Martín Abati et al. TensorFlow: Large-Scale Machine Learning on Heterogeneous Systems"
+        "year": "2016",
+        "title": "TensorFlow: Large-Scale Machine Learning on Heterogeneous Systems"
     },
     {
-        "author": "Seiya Tokui",
+        "author": "Seiya Tokui, Kenta Oono, Shohei Hido, Justin Clayton",
         "id": "chainer",
         "lang": "english",
-        "asis": "Seiya Tokui et al. Chainer: a Next-Generation Open Source Framework for Deep Learning"
+        "year": "2015",
+        "title": "Chainer: a Next-Generation Open Source Framework for Deep Learning"
     },
     {
         "author": "Linpeng Tang, Yida Wang, Theodore L. Willke, Kai Li",
         "id": "sched1",
         "lang": "english",
-        "asis": "Linpeng Tang, Yida Wang, Theodore L. Willke, Kai Li. Scheduling Computation Graphs of Deep Learning Models on Manycore CPUs"
+        "year": "2018",
+        "title": "Scheduling Computation Graphs of Deep Learning Models on Manycore CPUs"
     },
     {
-        "author": "Nadav Rotem",
+        "author": "Nadav Rotem, Jordan Fix, Saleem Abdulrasool, Summer Deng, Roman Dzhabarov, James Hegeman, Roman Levenstein, Bert Maher, Satish Nadathur, Jakob Olesen, Jongsoo Park, Artem Rakhov, Misha Smelyanskiy",
         "id": "glow",
         "lang": "english",
-        "asis": "Nadav Rotem et al. Glow: Graph Lowering Compiler Techniques for Neural Networks"
+        "year": "2018",
+        "title": "Glow: Graph Lowering Compiler Techniques for Neural Networks"
     }
 ]
