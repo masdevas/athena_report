@@ -1,4 +1,4 @@
-all: bib pdf
+all: generate_gbib_source bib pdf
 
 generate_gbib_source:
 	python3 scripts/bib_generator.py bibliography/ output/bibliography.gbib
