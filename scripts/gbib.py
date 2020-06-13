@@ -83,7 +83,9 @@ def print_rus_three_less(item):
     all_authors_str = ", ".join(all_authors) + "."
 
     bibitem += all_authors_str + " " + item["city"] + ": "
-    bibitem += item["publisher"] + ", " + item["year"] + "."
+    if "publisher" in item.keys():
+        bibitem += item["publisher"] + ", " 
+    bibitem += item["year"] + "."
     bibitem += " - " + item["pages"] + " с. \n"
 
     return bibitem

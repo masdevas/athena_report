@@ -1,0 +1,96 @@
+
+TEST(JITIntegration, TopologyLogReg) {
+  Context context;
+  auto graph = context.create<Graph>("graph1");
+  size_t sampleSize = 3;
+  auto dataset = readDataset("dataset_intersect.csv");
+  size_t rowsCount = dataset.size() / (sampleSize + 1);
+
+  // Node for data loading
+  auto inputLoader =
+      context.create<loaders::MemcpyLoader>(nullptr, 0);
+  auto dataInputNode = graph.create<InputNode>(
+      TensorShape{1, sampleSize}, DataType::FLOAT, true, inputLoader.getPublicIndex(), "inpVector");
+
+  // Node for weights holding
+  std::vector<float> weights{0.1, 1, 0.2};
+  auto weightsLoader =
+      context.create<loaders::MemcpyLoader>(weights.data(), sampleSize * sizeof(float));
+  auto weightsInputNode = graph.create<InputNode>(
+      TensorShape{sampleSize, 1}, DataType::FLOAT, false, weightsLoader.getPublicIndex(), "weightsVector");
+
+  // MatMulNode
+  auto operationMatMulId =
+      context.create<MatMulOperation>(false, false, "gemm");
+  auto nodeMatMul = graph.create<Node>(operationMatMulId, "nodeGemm");
+  graph.connect(dataInputNode, nodeMatMul, MatMulOperation::LEFT);
+  graph.connect(weightsInputNode, nodeMatMul, MatMulOperation::RIGHT);
+
+  // Sigmoid node
+  auto operationSigmoidId = context.create<SigmoidOperation>("sigmoid");
+  auto nodeSigmoid = graph.create<Node>(operationSigmoidId, "nodeSigmoid");
+  graph.connect(nodeMatMul, nodeSigmoid, SigmoidOperation::Unmarked);
+
+  // Node for ground truth loading
+  std::vector<float> groundTruth{0};
+  auto groundTruthLoader =
+      context.create<loaders::MemcpyLoader>(groundTruth.data(), groundTruth.size() * sizeof(float));
+  auto inpGroundTruth = graph.create<InputNode>(
+      TensorShape{1, 1}, DataType::FLOAT, true, groundTruthLoader.getPublicIndex(), "groundTruth");
+
+  // Log loss node
+  auto operationLogLossId = context.create<LogLossOperation>("logloss");
+  auto loss = graph.create<Node>(operationLogLossId, "loss");
+
+  graph.connect(nodeSigmoid, loss, LogLossOperation::PREDICTED);
+  graph.connect(inpGroundTruth, loss, LogLossOperation::GROUND_TRUTH);
+
+  auto [graphGradient, graphConnector] = graph.getGradient(loss);
+
+  LLVMExecutor executor;
+  executor.addGraph(graph);
+  executor.addGraph(graphGradient);
+  executor.addGraph(graphConnector);
+
+  auto& allocator = executor.getAllocator();
+  std::ofstream logfile("logfile_intersect.csv");
+  for (size_t index = 0; index < 75; ++index) {
+    if (index % 2 == 1) {
+      auto lossTensorPtr = context.internal()->getRef<AbstractNodeInternal>(loss).getTensorPtr();
+      float sumError = testModel(executor, graph, lossTensorPtr, inputLoader, groundTruthLoader, dataset, sampleSize, rowsCount);
+      logfile << sumError << ',';
+            std::cout << "SumError: " << sumError << std::endl;
+      for (int i = 0; i < sampleSize; i++) {
+        std::cout << "Weights: ";
+        std::cout << weights[i] << ' ';
+        logfile << weights[i] << ',';
+      }
+      logfile << '\n';
+      std::cout << std::endl;
+      inputLoader.setPointer(dataset.data() + index * (sampleSize + 1),
+                             sampleSize * sizeof(float));
+      groundTruthLoader.setPointer(
+          dataset.data() + index * (sampleSize + 1) + sampleSize, 1 * sizeof(float));
+      executor.evaluate(graph);
+
+      std::cout << "**************************************" << std::endl;
+
+      // Optimize
+      executor.evaluate(graphGradient);
+      executor.evaluate(graphConnector);
+
+      MemoryRecord recordWeights;
+      lossTensorPtr = context.internal()
+          ->getRef<AbstractNodeInternal>(weightsInputNode)
+          .getTensorPtr();
+      recordWeights.virtualAddress = lossTensorPtr->getVirtualAddress();
+      recordWeights.allocationSize = sampleSize * sizeof(float);
+      allocator.lock(recordWeights, LockType::READ);
+      auto res = static_cast<float*>(allocator.get(recordWeights));
+      for (int i = 0; i < sampleSize; i++) {
+        weights[i] = res[i];
+      }
+      allocator.release(recordWeights);
+    }
+  }
+}
